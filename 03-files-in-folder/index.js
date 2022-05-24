@@ -9,15 +9,13 @@ fs.readdir(secretFolder, { withFileTypes: true }, (err, elements) => {
   for (const el of elements) {
     if (el.isFile()) {
       fs.stat(`${secretFolder}/${el.name}`, (err, stats) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log(
-            `${path.parse(el.name).name} - ${path
-              .parse(el.name)
-              .ext.slice(1)} - ${stats.size / 1000}kb`
-          );
-        }
+        if (err) throw err;
+
+        console.log(
+          `${path.parse(el.name).name} - ${path
+            .parse(el.name)
+            .ext.slice(1)} - ${stats.size / 1000}kb`
+        );
       });
     }
   }
