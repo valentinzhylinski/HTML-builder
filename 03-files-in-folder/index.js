@@ -5,7 +5,7 @@ const secretFolder = `${path.join(__dirname, "./secret-folder")}`;
 
 fs.readdir(secretFolder, { withFileTypes: true }, (err, elements) => {
   if (err) {
-    throw "Error";
+    throw err;
   } else {
     elements.map((el) => {
       if (el.isFile()) {
