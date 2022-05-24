@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const process = require("process");
 const readline = require("readline").createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -19,7 +20,7 @@ readline.on("line", (input) => {
   if (exitText === "exit") {
     readline.close();
   } else {
-    writeStream.write(input + "\n");
+    writeStream.write(`${input}\n`);
   }
 });
 
