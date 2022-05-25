@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const process = require("process");
 
 const styles = `${path.join(__dirname, "/styles")}`;
 const bundle = `${path.join(__dirname, "/project-dist/bundle.css")}`;
